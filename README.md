@@ -34,8 +34,7 @@ client.SetOnMessage(func(msg string) {
     if strings.Contains(msg, "방지 문자: ") {
         captcha := strings.Split(msg, "방지 문자: ")[1]
         solvedCaptcha := gagalive.NewSolveMacro().Solve(captcha)
-
-        terminal.AddString(solvedCaptcha)
+        
         client.Send(solvedCaptcha)
         return
     }
